@@ -1,0 +1,34 @@
+#include <iostream>
+#include <string>
+#include <boost/program_options.hpp>
+using namespace std;
+using namespace boost::program_options;
+
+int main(int argc, char* argv[])
+{
+	// オプションの設計
+	options_description opt("オプション");
+	opt.add_options()
+	  ("help,h",                                  "ヘルプを表示")
+	  ("op"   , value<string>(),                  "演算の種類(add,sub,mul,div)")
+	  ("lhs,L", value<int>()->default_value(100), "左")
+	  ("rhs,R", value<int>()->default_value(200), "右");
+
+	// argc, argv を解析して、結果をvmに格納
+	variables_map vm;
+	store(parse_command_line(argc, argv, opt), vm);
+	notify(vm);
+
+	if( vm.count("help") || !vm.count("op") )
+		cout << opt << endl; // ヘルプ表示
+	else
+	{
+		string op = vm["op"].as<string>();
+		int   lhs = vm["lhs"].as<int>();
+		int   rhs = vm["rhs"].as<int>();
+		if( op=="add" ) cout << lhs+rhs << endl;
+		if( op=="sub" ) cout << lhs-rhs << endl;
+		if( op=="mul" ) cout << lhs*rhs << endl;
+		if( op=="div" ) cout << lhs/rhs << endl;
+	}
+}

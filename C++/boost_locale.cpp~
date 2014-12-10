@@ -1,0 +1,11 @@
+#include <iostream>
+#include <boost/locale.hpp>
+
+using namespace std;
+using namespace boost::locale;
+int main()
+{
+    cout << translate("Hello,world!!") << endl;
+
+    return 0;
+}

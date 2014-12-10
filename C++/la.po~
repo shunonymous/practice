@@ -1,0 +1,21 @@
+# Latin translations for PACKAGE package.
+# Copyright (C) 2014 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Shun Terabayashi <shunonymous@gmail.com>, 2014.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-11-24 17:15+0900\n"
+"PO-Revision-Date: 2014-11-24 17:21+0900\n"
+"Last-Translator: Shun Terabayashi <shunonymous@gmail.com>\n"
+"Language-Team: Latin\n"
+"Language: la\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ASCII\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: boost_locale.cpp:14
+msgid "Hello,world!!"
+msgstr ""

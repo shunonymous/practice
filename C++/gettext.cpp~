@@ -1,0 +1,37 @@
+#include <iostream>
+#include <cstdlib>
+#include <fstream>
+#include <boost/program_options.hpp>
+
+using namespace std;
+using namespace boost::program_options;
+
+int main(void)
+{
+
+    //TRANSLATORS : Mikukawaii.
+    options_description options1(_("Miku is so cute."));
+    options_description options2(_("How cute is miku?"));
+    options_description options3(_("Miku!Miku!Miku!"));
+    
+    options1.add_options()
+	("cute",_("Miku is cute."))
+	("so-cute",_("Miku is so cute."))
+	;
+	
+    options2.add_options()
+	("cuteness,c",value<int>(),_("Miku's cuteness."));
+
+    options3.add_options()
+	("louise,l",_("Display the sentence likes \"that\"."));
+
+    variables_map values;
+
+    try
+    {
+	store(parse_config_file(argc,argv,options2),values);
+
+	ifstream ifs("mikukopipe.txt");
+
+    return 0;
+}

@@ -1,0 +1,16 @@
+#include <iostream>
+#include <cunistd>
+
+using namespace std;
+int main(int argc,char** argv)
+{
+    int i;
+    char c;
+    string s;
+
+    for(i=0;i<argc;i++)
+    {
+	
+    }
+
+}
